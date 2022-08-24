@@ -1,12 +1,12 @@
 
-const { it } = require('node:test');
-const { hasUncaughtExceptionCaptureCallback } = require('process');
+
 const searchCandies = require('./searchCandies');
 
 describe('searchcandies', (search, price) => {
 
   it(' searches "Ma" upto price 10', () =>
-  expect(searchCandies('Ma', 10)).toEqual (['Mars', Maltesers]) 
+  expect(searchCandies('Ma', 10)).toEqual (['Mars', 'Maltesers']))
+
 })
 
 

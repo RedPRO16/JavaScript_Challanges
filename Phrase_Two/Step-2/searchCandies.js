@@ -15,4 +15,15 @@ const candies = [
   { name: 'Fraise Tagada', price: 5.99 }
 ];
 
+const filter_prefix = (candy, search) =>{
+  return candy.name.toLowerCase().startsWith(search.toLowerCase());
+}
+
+const searchCandies = (search, price) => {
+  let name_search = candies.filter((candy) => filter_prefix(candy, search))
+  let price_filter = name_search.filter((candy) => candy.price < price)
+  return price_filter.map((candy) => candy.name);
+};
+
+module.exports = searchCandies
 
