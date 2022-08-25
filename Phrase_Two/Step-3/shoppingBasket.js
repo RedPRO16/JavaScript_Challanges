@@ -13,7 +13,7 @@ class ShoppingBasket {
 
   getTotalPrice() {
     let total = 0;
-    this.basket.forEach((candy) => totalPrice += candy.getPrice());
+    this.basket.forEach((candy) => total += candy.getPrice());
     return total - this.discount;
   }
 

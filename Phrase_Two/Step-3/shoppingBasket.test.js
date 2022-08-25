@@ -1,5 +1,5 @@
 
-const { it } = require("node:test");
+
 const ShoppingBasket = require('./shoppingBasket.js');
 
 describe('ShoppingBasket element', () => {

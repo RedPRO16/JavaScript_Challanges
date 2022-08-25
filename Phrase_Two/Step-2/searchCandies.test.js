@@ -1,5 +1,4 @@
 
-
 const searchCandies = require('./searchCandies');
 
 describe('searchcandies', (search, price) => {
