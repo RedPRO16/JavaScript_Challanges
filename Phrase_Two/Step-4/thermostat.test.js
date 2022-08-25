@@ -1,7 +1,7 @@
 // const { describe, it } = require("node:test");
 // const { hasUncaughtExceptionCaptureCallback } = require("process");
 
-const { it } = require("node:test");
+// const { it } = require("node:test");
 
 const Thermostat = required('./thermostat.js')
 
@@ -50,7 +50,7 @@ describe('thermostat working system', () => {
     expect(thermostat.usage()).toBe('less');
   });
 
-  it('get 26 degrees with power save mode off', () => {
+  it('get 30 degrees with power save mode off', () => {
     const thermostat = new Thermostat;
     thermostat.setPowerSavingMode(false)
     for (let i = 0; i < 10; i++) {
