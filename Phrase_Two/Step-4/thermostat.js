@@ -30,6 +30,7 @@ class Thermostat {
       return 'high'
     }
   }
+  
   getUp() {
     if (this.temperature < 32 && this.powersave == false) {
       this.temperature += 1;

@@ -3,14 +3,14 @@
 
 // const { it } = require("node:test");
 
-const Thermostat = required('./thermostat.js')
+const Thermostat = require('./thermostat.js')
 
 
 describe('thermostat working system', () => {
 
   it('termostat default mode is 20 degree', () => {
     const thermostat = new Thermostat;
-    expect(thermostat.getTemperature()).toBe(20);
+    expect(thermostat.getTemperature()).toEqual(20);
   });
 
   it('up to 22 degree', () => {
@@ -18,7 +18,7 @@ describe('thermostat working system', () => {
     const thermostat = new Thermostat;
     thermostat.getUp()
     thermostat.getUp()
-    expect(thermostat.getTemperature()).toBe(22);
+    expect(thermostat.getTemperature()).toEqual(22);
   });
 
   it('down to 21 degree', () => {
@@ -27,7 +27,7 @@ describe('thermostat working system', () => {
     thermostat.getUp()
     thermostat.getUp()
     thermostat.getDown()
-    expect(thermostat.getTemperature()).toBe(21);
+    expect(thermostat.getTemperature()).toEqual(21);
   });
 
   it('max degree is 25 power save mode on', () => {
@@ -36,8 +36,8 @@ describe('thermostat working system', () => {
     for (let i = 0 ; i < 10 ; i++) {
       thermostat.getUp();
     }
-    expect(thermostat.getTemperature()).toBe(25);
-    expect(thermostat.usage()).toBe('normal');
+    expect(thermostat.getTemperature()).toEqual(25);
+    expect(thermostat.usage()).toEqual('normal');
   });
 
   it('low degree is 10 power save mode off', () => {
@@ -46,18 +46,19 @@ describe('thermostat working system', () => {
     for (let i = 0 ; i < 12 ; i++) {
       thermostat.getDown();
     }
-    expect(thermostat.getTemperature()).toBe(10);
-    expect(thermostat.usage()).toBe('less');
+    expect(thermostat.getTemperature()).toEqual(10);
+    expect(thermostat.usage()).toEqual('less');
   });
 
-  it('get 30 degrees with power save mode off', () => {
+  it('get 32 degrees with power save mode off', () => {
     const thermostat = new Thermostat;
     thermostat.setPowerSavingMode(false)
-    for (let i = 0; i < 10; i++) {
-      thermostat.up();
+    for (let i = 0; i < 15; i++) {
+      thermostat.getUp();
     }
-    expect(thermostat.getTemperature()).toBe(26);
-    expect(thermostat.Usage()).toBe('high')
+    expect(thermostat.getTemperature()).toEqual(32);
+
+    expect(thermostat.usage()).toEqual('high')
   });
 
   it('reset to 20 degrees', () => {
@@ -67,7 +68,7 @@ describe('thermostat working system', () => {
       thermostat.getUp();
     }
     thermostat.reset()
-    expect(thermostat.getTemperature()).toBe(20);
+    expect(thermostat.getTemperature()).toEqual(20);
   });
 
 
