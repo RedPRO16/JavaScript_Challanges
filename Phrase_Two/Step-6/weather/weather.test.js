@@ -2,7 +2,7 @@ const Weather = require('./weather')
 
 const responseObject = {
   city: 'London',
-  weather: 'Chucking it down'
+  weather: 'Cloudy'
 };
 
 describe('Weather class', () => {

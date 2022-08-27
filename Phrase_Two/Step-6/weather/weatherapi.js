@@ -9,6 +9,8 @@ class WeatherApi {
   fetchweatherData(city, callback) {
     const apiUrl = `http://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`;
 
+
+
     got(apiUrl).then((response) => {
       weatherData = JSON.parse(response.body);
       callback(weatherData);
@@ -18,3 +20,8 @@ class WeatherApi {
 };
 
 module.exports = WeatherApi;
+
+// Into node
+// const WeatherApi = require('./weatherapi')
+// const api = new WeatherApi()
+// api.fetchweatherData('London', console.log)
